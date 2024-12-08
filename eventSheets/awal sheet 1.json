@@ -1,0 +1,62 @@
+{
+	"name": "awal sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 685132637531766,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TOMBOLMASUK"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 766133131191750,
+					"parameters": {
+						"layout": "isi"
+					}
+				}
+			],
+			"sid": 614111536827924
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 538968535825344,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TOMBOLMASUK"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 409891564395071,
+					"parameters": {
+						"audio-file": "preview (1)",
+						"loop": "not-looping",
+						"volume": "50",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 770629991701225
+		}
+	],
+	"sid": 883409588808321
+}

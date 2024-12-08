@@ -1,0 +1,230 @@
+{
+	"name": "isi sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 233151136929763
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "drag",
+					"sid": 974904410949429,
+					"parameters": {
+						"instance-variable": "posX",
+						"value": "Self.X"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "drag",
+					"sid": 448057603795318,
+					"parameters": {
+						"instance-variable": "posY",
+						"value": "Self.Y"
+					}
+				}
+			],
+			"sid": 794716421973976
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drag-start",
+					"objectClass": "drag",
+					"sid": 926200690471892,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "drag",
+					"sid": 847952200646373
+				}
+			],
+			"sid": 357094476879553
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drop",
+					"objectClass": "drag",
+					"sid": 361855462642720,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [],
+			"sid": 731125568792812,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "drag",
+							"sid": 322482303869955,
+							"parameters": {
+								"object": "drop"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 350288457995713,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "drag",
+									"sid": 747322342793147,
+									"parameters": {
+										"comparison": 0,
+										"number": "drop.AnimationFrame"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "drag",
+									"sid": 547026718375061,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "drop.X",
+										"end-y": "drop.Y",
+										"time": "0.5",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "drag",
+									"sid": 510124642268780,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 247790440835708,
+									"parameters": {
+										"audio-file": "preview (1)",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 652574316614105
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 377199274216579
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "drag",
+									"sid": 725267288037451,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "Self.posX",
+										"end-y": "Self.posY",
+										"time": "0.5",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 586556977802027,
+									"parameters": {
+										"audio-file": "mixkit-funny-fail-low-tone-2876",
+										"loop": "not-looping",
+										"volume": "50",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 883323836256934
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 247814042320525
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "drag",
+							"sid": 925081164945970,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Self.posX",
+								"end-y": "Self.posY",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 661553447282977,
+							"parameters": {
+								"audio-file": "mixkit-funny-fail-low-tone-2876",
+								"loop": "not-looping",
+								"volume": "50",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 402261821151851
+				}
+			]
+		}
+	],
+	"sid": 862651002105029
+}
